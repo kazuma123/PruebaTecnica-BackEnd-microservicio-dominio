@@ -14,7 +14,9 @@ public class UsuarioServiceImpl implements IUsuarioService{
     private final ModelMapper modelMapper;
     @Override
     public UsuarioDto create(UsuarioDto dto) {
+
         Usuario usuario = usuarioRepository.save(modelMapper.map(dto, Usuario.class));
+        System.out.println(usuario);
         return modelMapper.map(usuario, UsuarioDto.class);
     }
 }
